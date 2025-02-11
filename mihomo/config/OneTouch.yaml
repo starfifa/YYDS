@@ -79,7 +79,7 @@ dns:
     - ntp.*.com
     - rule-set:cn_domain
     - +.market.xiaomi.com
-    - +.googlevideo.comn
+    - +.googlevideo.com
     - +.push.apple.com
   default-nameserver:
     - 119.29.29.29
