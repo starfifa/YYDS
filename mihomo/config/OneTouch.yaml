@@ -8,7 +8,7 @@
 # ||      ╚═════╝  ╚═════╝  ╚═════╝      ||
 # ||                                     ||
 # >>=====================================<<
-# 名称: OneTouch 一键连 v2
+# 名称: OneTouch 一键连 v2.1
 # 日期: 2025年1月17日
 # 地址: https://github.com/666OS
 # 频道: https://t.me/Pinched666
@@ -52,7 +52,6 @@ sniffer:
   override-destination: false
   force-dns-mapping: true
   parse-pure-ip: true
-  skip-domain: ['+.googlevideo.com']
   
 tun:
   enable: true
@@ -79,7 +78,6 @@ dns:
     - ntp.*.com
     - rule-set:cn_domain
     - +.market.xiaomi.com
-    - +.googlevideo.com
     - +.push.apple.com
   default-nameserver:
     - 119.29.29.29
@@ -88,8 +86,6 @@ dns:
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-  nameserver-policy:
-    '+.googlevideo.com': https://dns64.dns.google/dns-query
 
 proxies:
   - {name: 直连, type: direct, udp: true, icon: https://git.mihomos.us.kg/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Direct.png}
