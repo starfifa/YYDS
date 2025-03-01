@@ -1,9 +1,9 @@
 // 引用地址：https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js
-// 更新时间：2025-02-28 08:55:21
+// 更新时间：2025-03-01 08:59:17
 /*
 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/weibo.js
 */
-// 2024-12-17 10:45
+// 2025-02-11 15:00
 
 const url = $request.url;
 if (!$response) $done({});
@@ -89,7 +89,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
               continue;
             }
             // 我的热搜 查看更多热搜
-            if ([6, 101]?.includes(cardType)) {
+            if (cardType === 6) {
               continue;
             }
             if (group?.mblog) {
@@ -281,7 +281,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
         if (item?.items?.length > 0) {
           let newII = [];
           for (let i of item.items) {
-            if (i?.data.hasOwnProperty("promotion")) {
+            if (i?.data?.hasOwnProperty("promotion")) {
               // 热搜列表中的推广项目
               continue;
             } else if (/_img_search_stick/.test(i?.data?.pic)) {
@@ -698,7 +698,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
             } else if (item?.data?.cate_id === "1114") {
               // 微博趋势标题
               continue;
-            } else if (item?.data.hasOwnProperty("rank")) {
+            } else if (item?.data?.hasOwnProperty("rank")) {
               // 奥运等排行榜
               continue;
             } else {
@@ -766,7 +766,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
                     } else if (item?.data?.cate_id === "1114") {
                       // 微博趋势标题
                       continue;
-                    } else if (item?.data.hasOwnProperty("rank")) {
+                    } else if (item?.data?.hasOwnProperty("rank")) {
                       // 奥运等排行榜
                       continue;
                     } else {
@@ -803,6 +803,39 @@ if (url.includes("/interface/sdk/sdkad.php")) {
           }
         }
         obj.channelInfo.channels = newChannels;
+      }
+      if (obj?.channelInfo?.moreChannels) {
+        // 更多版块
+        delete obj.channelInfo.moreChannels;
+      }
+      if (obj?.header?.data?.items?.length > 0) {
+        // 2025-01-24更新 新版本finder_window
+        let newItems = [];
+        for (let item of obj.header.data.items) {
+          if (item?.category === "card") {
+            if ([19, 22, 118, 206, 208, 217, 236, 249, 261]?.includes(item?.data?.card_type)) {
+              continue;
+            }
+            if (item?.data?.hasOwnProperty("rank")) {
+              // 各种赛事排行榜
+              continue;
+            }
+          } else if (item?.category === "group") {
+            if (item?.items?.length > 0) {
+              let newII = [];
+              for (let i of item.items) {
+                if ([118, 182, 192, 217, 247, 264]?.includes(i?.data?.card_type)) {
+                  continue;
+                } else {
+                  newII.push(i);
+                }
+              }
+              item.items = newII;
+            }
+          }
+          newItems.push(item);
+        }
+        obj.header.data.items = newItems;
       }
     }
   } else if (url.includes("/2/searchall")) {
@@ -1068,14 +1101,15 @@ if (url.includes("/interface/sdk/sdkad.php")) {
           }
         } else if (item?.category === "card") {
           if ([4, 197, 1012]?.includes(item?.data?.card_type)) {
-            // 4 你可能感兴趣的超话
-            // 197 你可能感兴趣的超话
-            // 1012 热门超话
+            // 4你可能感兴趣的超话 197你可能感兴趣的超话 1012热门超话
             continue;
           } else {
             if (item?.data?.card_type === 31 && item?.data?.hotwords?.length > 0) {
               // 31 搜索框滚动热词
               item.data.hotwords = [];
+            }
+            if (item?.data?.card_type === 22 && item?.data?.hasOwnProperty("card_ad_style")) {
+              continue;
             }
             newItems.push(item);
           }
@@ -1088,7 +1122,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
               // 超话页顶部乱七八糟
               let newII = [];
               for (let ii of item.items) {
-                if (ii?.data.hasOwnProperty("itemid")) {
+                if (ii?.data?.hasOwnProperty("itemid")) {
                   if (ii?.data?.itemid?.includes("mine_topics")) {
                     // 保留我的超话
                     newII.push(ii);
@@ -1236,6 +1270,19 @@ if (url.includes("/interface/sdk/sdkad.php")) {
         }
       }
       obj.statuses = newStatuses;
+    }
+  } else if (url.includes("/2/video/tiny_stream_mid_detail")) {
+    if (obj?.status?.video_info?.shopping?.length > 0) {
+      // 带货
+      obj.status.video_info.shopping = [];
+    }
+    if (obj?.status?.video_info?.bottom_banner) {
+      // 大家都在搜
+      obj.status.video_info.bottom_banner = {};
+    }
+    if (obj?.status?.video_info?.float_info) {
+      // 悬浮窗
+      obj.status.video_info.float_info = {};
     }
   } else if (url.includes("/2/video/tiny_stream_video_list")) {
     if (obj?.statuses?.length > 0) {
