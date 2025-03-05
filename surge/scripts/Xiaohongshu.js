@@ -1,5 +1,5 @@
 // 引用地址：https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js
-// 更新时间：2025-03-04 08:55:59
+// 更新时间：2025-03-05 08:56:09
 /*
 引用地址 https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/xiaohongshu.js
 */
