@@ -6,9 +6,7 @@ payload:
 
   # DOMAIN
   - DOMAIN,gst.prod.dl.playstation.net
-  - DOMAIN,linux.do
   - DOMAIN,ottsdk.itv.video
-  - DOMAIN,mihomos.us.kg
 
   # DOMAIN-SUFFIX
   - DOMAIN-SUFFIX,alice.ws
