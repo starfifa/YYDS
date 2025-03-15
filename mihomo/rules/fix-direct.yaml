@@ -9,6 +9,7 @@ payload:
   - DOMAIN,ottsdk.itv.video
 
   # DOMAIN-SUFFIX
+  - DOMAIN-SUFFIX,linux.do
   - DOMAIN-SUFFIX,alice.ws
   - DOMAIN-SUFFIX,apple-dns.cn
   - DOMAIN-SUFFIX,archive.org
