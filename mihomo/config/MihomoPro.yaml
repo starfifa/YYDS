@@ -8,8 +8,8 @@
 # ||      ╚═════╝  ╚═════╝  ╚═════╝      ||
 # ||                                     ||
 # >>=====================================<<
-# 名称: MihomoPro高大全 V3.2
-# 日期: 2025 年 2 月 24 日
+# 名称: MihomoPro高大全 V3.3
+# 日期: 2025 年 3 月 15 日
 # 地址: https://github.com/666OS
 # 频道: https://t.me/Pinched666
 # 注意：在proxy-providers加入您的机场订阅链接（锚点区结束后面）
@@ -289,9 +289,6 @@ rule-providers:
   onedrive:
     <<: *DomainMrs
     url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/onedrive.mrs
-  microsoft@cn:
-    <<: *DomainMrs
-    url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/microsoft@cn.mrs
   microsoft:
     <<: *DomainMrs
     url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/microsoft.mrs
@@ -400,7 +397,6 @@ rules:
   - RULE-SET,tiktok,TikTok
   - RULE-SET,github,Github
   - RULE-SET,onedrive,微软服务
-  - RULE-SET,microsoft@cn,国内网站
   - RULE-SET,microsoft,微软服务
   - RULE-SET,instagram,脸书服务
   - RULE-SET,facebook,脸书服务
