@@ -1,5 +1,5 @@
 // 引用地址：https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js
-// 更新时间：2025-03-17 08:58:27
+// 更新时间：2025-03-18 08:56:32
 /*
 引用地址：https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/weibo.js
 */
