@@ -34,11 +34,11 @@ LoadBalanceCH: &LoadBalanceCH {type: load-balance, interval: 60, lazy: true, url
 LoadBalanceCR: &LoadBalanceCR {type: load-balance, interval: 60, lazy: true, url: 'https://www.gstatic.com/generate_204', disable-udp: false, strategy: round-robin, timeout: 2000, max-failed-times: 3, hidden: true, include-all: true}
 
 # 锚点 - 选择组 
-SelectFB: &SelectFB {type: select, proxies: [故障转移, 香港策略, 台湾策略, 新加坡策略, 日本策略, 韩国策略, 美国策略, 欧盟策略, 冷门自选, 全球手动, 链式代理, 直连]}
+SelectFB: &SelectFB {type: select, include-all: true, proxies: [故障转移, 香港策略, 台湾策略, 新加坡策略, 日本策略, 韩国策略, 美国策略, 欧盟策略, 冷门自选, 全球手动, 链式代理]}
 SelectHK: &SelectHK {type: select, proxies: [香港策略, 台湾策略, 新加坡策略, 日本策略, 韩国策略, 美国策略, 欧盟策略, 冷门自选, 全球手动, 链式代理, 直连]}
 SelectSG: &SelectSG {type: select, proxies: [新加坡策略, 故障转移, 香港策略, 台湾策略, 日本策略, 韩国策略, 美国策略, 欧盟策略, 冷门自选, 全球手动, 链式代理, 直连]}
 SelectUS: &SelectUS {type: select, proxies: [美国策略, 故障转移, 香港策略, 台湾策略, 新加坡策略, 日本策略, 韩国策略, 欧盟策略, 冷门自选, 全球手动, 链式代理, 直连]}
-SelectProxy: &SelectProxy {type: select, proxies: [默认代理, 故障转移, 香港策略, 台湾策略, 新加坡策略, 日本策略, 韩国策略, 美国策略, 欧盟策略, 冷门自选, 全球手动, 链式代理, 直连]}
+SelectProxy: &SelectProxy {type: select, include-all: true, proxies: [默认代理, 故障转移, 香港策略, 台湾策略, 新加坡策略, 日本策略, 韩国策略, 美国策略, 欧盟策略, 冷门自选, 全球手动, 链式代理, 直连]}
 # 锚点 - 规则集 
 DomainMrs: &DomainMrs {type: http, interval: 86400, behavior: domain, format: mrs}
 DomainText: &DomainText {type: http, interval: 86400, behavior: domain, format: text}
@@ -52,8 +52,12 @@ ClassicalYaml: &ClassicalYaml {type: http, interval: 86400, behavior: classical,
 # 远程订阅组
 # 注意：请提供您的机场订阅链接，每个链接一行，并为每个机场命名，末尾的[A]为每个节点添加机场名称前缀，可自定义
 proxy-providers:
-  机场A: {<<: *PProviders, url: '机场订阅地址', override: {additional-prefix: '[A] '}}
-  机场B: {<<: *PProviders, url: '机场订阅地址', override: {additional-prefix: '[B] '}}
+  红杏云: {<<: *PProviders, url: 'https://hongxingdl.com/hxvip?token=1ee0f845446fa5158640127e6bbe8b65', override: {additional-prefix: '[HX] '}}
+  流量光: {<<: *PProviders, url: 'https://rgergergergerg6555.saojc.xyz/api/v1/client/subscribe?token=11fdfab9e520c22b9d1468c69f8e5442', override: {additional-prefix: '[LG] '}}
+  涅槃云: {<<: *PProviders, url: 'https://qslink.yeahfast.com/verival/qsy/lod?token=NaOGimEJtmQz4Rdm', override: {additional-prefix: '[涅槃] '}}
+  STT: {<<: *PProviders, url: 'https://sttsub.top/link/9NFgIHrK60anMWXP?clash=1', override: {additional-prefix: '[STT] '}}
+  MoJie: {<<: *PProviders, url: 'https://onlysub.mjurl.com/api/v1/client/subscribe?token=8854d7525f07b89e5b2024656f1bffe6', override: {additional-prefix: '[MJ] '}}
+  AZ: {<<: *PProviders, url: 'https://az.233235.xyz/api/v1/client/subscribe?token=5fd81a51c93a31f95ef9f6a58fb32416', override: {additional-prefix: '[AZ] '}}
 
 # 全局配置
 port: 7890
@@ -182,6 +186,7 @@ proxy-groups:
   - {name: NetFlix, <<: *SelectProxy, icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png}
   - {name: TikTok, <<: *SelectProxy, icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok.png}
   - {name: Disney, <<: *SelectProxy, icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Disney.png}
+  - {name: PrimeVideo, <<: *SelectProxy, icon: https://ghgo.xyz/https://raw.githubusercontent.com/starfifa/ios_rule_script/refs/heads/master/icon/color/primevideo.png}
   - {name: Spotify, <<: *SelectProxy, icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png}
   - {name: HBO, <<: *SelectProxy, icon: https://git.imee.me/https://raw.githubusercontent.com/Orz-3/mini/master/Color/HBO.png}
   - {name: 国际新闻, <<: *SelectProxy, icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_News.png}
@@ -207,7 +212,7 @@ proxy-groups:
   - {name: 欧盟策略, type: select, proxies: [欧盟自动, 欧盟均衡-散列, 欧盟均衡-轮询], include-all: true, filter: *FilterEU, icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/European_Union.png}
    # 其他策略
   - {name: 链式代理, type: relay, proxies: [中转机, 落地机], icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TIDAL_1.png}
-  - {name: 中转机, type: select, proxies: [香港策略, 台湾策略, 日本策略, 新加坡策略, 韩国策略, 美国策略, 欧盟策略, 冷门自选, 全球手动], icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png}
+  - {name: 中转机, type: select, include-all: true, filter: *FilterAll, icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png}
   - {name: 落地机, type: select, include-all: true, filter: *FilterAll, icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Domestic.png}
   - {name: 国内网站, type: select, proxies: [直连], icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png}
   - {name: 国外网站, <<: *SelectProxy, icon: https://git.imee.me/https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png}
@@ -277,6 +282,9 @@ rule-providers:
   disney:
     <<: *DomainMrs
     url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/disney.mrs
+  primevideo:
+    <<: *ClassicalYaml
+    url: https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AmazonPrimeVideo/AmazonPrimeVideo.yaml
   hbo:
     <<: *DomainMrs
     url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/hbo.mrs
@@ -393,6 +401,7 @@ rules:
   - RULE-SET,spotify,Spotify
   - RULE-SET,netflix,NetFlix
   - RULE-SET,disney,Disney
+  - RULE-SET,primevideo,PrimeVideo
   - RULE-SET,hbo,HBO
   - RULE-SET,tiktok,TikTok
   - RULE-SET,github,Github
