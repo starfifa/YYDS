@@ -9,6 +9,7 @@ payload:
   - DOMAIN,ottsdk.itv.video
 
   # DOMAIN-SUFFIX
+  - DOMAIN-SUFFIX,4820286.xyz
   - DOMAIN-SUFFIX,linux.do
   - DOMAIN-SUFFIX,chatwise.app
   - DOMAIN-SUFFIX,alice.ws
