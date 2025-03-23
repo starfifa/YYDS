@@ -247,6 +247,9 @@ rule-providers:
   fix-direct:
     <<: *ClassicalYaml
     url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/fix-direct.yaml
+  Line:
+    <<: *ClassicalYaml
+    url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/Line.yaml
   speedtest:
     <<: *ClassicalYaml
     url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/speedtest.yaml 
@@ -411,6 +414,7 @@ rules:
   - RULE-SET,category-games,游戏平台
   - RULE-SET,category-media-cn,国内网站
   - RULE-SET,category-media,国际新闻
+  - RULE-SET,Line,社交平台
   - RULE-SET,category-social-media-!cn,社交平台
   - RULE-SET,cn_domain,国内网站
   - RULE-SET,geolocation-!cn,国外网站
