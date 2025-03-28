@@ -8,8 +8,8 @@
 # ||      ╚═════╝  ╚═════╝  ╚═════╝      ||
 # ||                                     ||
 # >>=====================================<<
-# 名称: MihomoPro高大全 V3.3
-# 日期: 2025 年 3 月 15 日
+# 名称: MihomoPro高大全 V3.4
+# 日期: 2025 年 3 月 29 日
 # 地址: https://github.com/666OS
 # 频道: https://t.me/Pinched666
 # 注意：在proxy-providers加入您的机场订阅链接（锚点区结束后面）
@@ -337,9 +337,9 @@ rule-providers:
   category-social-media-!cn:
     <<: *DomainMrs
     url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/category-social-media-!cn.mrs
-  category-ai-chat-!cn:
+  category-ai-!cn:
     <<: *DomainMrs
-    url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/category-ai-chat-!cn.mrs
+    url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/category-ai-!cn.mrs
   geolocation-!cn:
     <<: *DomainMrs
     url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/geolocation-!cn.mrs
@@ -388,7 +388,7 @@ rules:
   - RULE-SET,private_ip,国内网站,no-resolve
   - RULE-SET,speedtest,网速测试
   - RULE-SET,openai,ChatGPT
-  - RULE-SET,category-ai-chat-!cn,AI平台
+  - RULE-SET,category-ai-!cn,AI平台
   - RULE-SET,telegram,Telegram
   - RULE-SET,twitter,Twitter
   - RULE-SET,emby,Emby
