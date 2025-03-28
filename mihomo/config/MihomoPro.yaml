@@ -344,7 +344,7 @@ rule-providers:
     url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/category-social-media-!cn.mrs
   category-ai-chat-!cn:
     <<: *DomainMrs
-    url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/category-ai-chat-!cn.mrs
+    url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/category-ai-!cn.mrs
   geolocation-!cn:
     <<: *DomainMrs
     url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/geolocation-!cn.mrs
