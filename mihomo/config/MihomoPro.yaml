@@ -52,13 +52,9 @@ ClassicalYaml: &ClassicalYaml {type: http, interval: 86400, behavior: classical,
 # 远程订阅组
 # 注意：请提供您的机场订阅链接，每个链接一行，并为每个机场命名，末尾的[A]为每个节点添加机场名称前缀，可自定义
 proxy-providers:
-  红杏云: {<<: *PProviders, url: 'https://hongxingdl.com/hxvip?token=1ee0f845446fa5158640127e6bbe8b65', override: {additional-prefix: '[HX] '}}
-  流量光: {<<: *PProviders, url: 'https://rgergergergerg6555.saojc.xyz/api/v1/client/subscribe?token=11fdfab9e520c22b9d1468c69f8e5442', override: {additional-prefix: '[LG] '}}
-  涅槃云: {<<: *PProviders, url: 'https://qslink.yeahfast.com/verival/qsy/lod?token=NaOGimEJtmQz4Rdm', override: {additional-prefix: '[涅槃] '}}
-  STT: {<<: *PProviders, url: 'https://sttsub.top/link/9NFgIHrK60anMWXP?clash=1', override: {additional-prefix: '[STT] '}}
-  MoJie: {<<: *PProviders, url: 'https://onlysub.mjurl.com/api/v1/client/subscribe?token=8854d7525f07b89e5b2024656f1bffe6', override: {additional-prefix: '[MJ] '}}
-  AZ: {<<: *PProviders, url: 'https://az.233235.xyz/api/v1/client/subscribe?token=5fd81a51c93a31f95ef9f6a58fb32416', override: {additional-prefix: '[AZ] '}}
-
+  机场A: {<<: *PProviders, url: '机场订阅地址', override: {additional-prefix: '[A] '}}
+  机场B: {<<: *PProviders, url: '机场订阅地址', override: {additional-prefix: '[B] '}}
+  
 # 全局配置
 port: 7890
 socks-port: 7891
