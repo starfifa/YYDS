@@ -7,6 +7,7 @@ payload:
   # DOMAIN
   - DOMAIN,gst.prod.dl.playstation.net
   - DOMAIN,ottsdk.itv.video
+  - DOMAIN,tempmail.plus
 
   # DOMAIN-SUFFIX
   - DOMAIN-SUFFIX,4820286.xyz
@@ -23,7 +24,6 @@ payload:
   - DOMAIN-SUFFIX,iqiyis.com
   - DOMAIN-SUFFIX,istoreos.com
   - DOMAIN-SUFFIX,kelee.one
-  - DOMAIN-SUFFIX,mihomos.us.kg
   - DOMAIN-SUFFIX,musicbrainz.org
   - DOMAIN-SUFFIX,ntp.org
   - DOMAIN-SUFFIX,oaifree.com
@@ -32,13 +32,11 @@ payload:
   - DOMAIN-SUFFIX,steamcontent.com
   - DOMAIN-SUFFIX,synology.com
   - DOMAIN-SUFFIX,cloudstudio.work
-  - DOMAIN-SUFFIX,follow.is
   - DOMAIN-SUFFIX,cloudstudio.work
   - DOMAIN-SUFFIX,ngrok-free.app
   - DOMAIN-SUFFIX,gradio.live
-  - DOMAIN-SUFFIX,vscode-cdn.net
-  - DOMAIN-SUFFIX,openrouter.ai
-  
+  - DOMAIN-SUFFIX,tempmail.plus
+    
   # PROCESS-NAME
   - PROCESS-NAME,aria2c
   - PROCESS-NAME,CloudflareWARP
