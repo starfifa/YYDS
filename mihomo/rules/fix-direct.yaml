@@ -11,8 +11,6 @@ payload:
 
   # DOMAIN-SUFFIX
   - DOMAIN-SUFFIX,4820286.xyz
-  - DOMAIN-SUFFIX,linux.do
-  - DOMAIN-SUFFIX,chatwise.app
   - DOMAIN-SUFFIX,alice.ws
   - DOMAIN-SUFFIX,apple-dns.cn
   - DOMAIN-SUFFIX,archive.org
@@ -20,7 +18,6 @@ payload:
   - DOMAIN-SUFFIX,cocopilot.org
   - DOMAIN-SUFFIX,czzyvideo.com
   - DOMAIN-SUFFIX,ghp.ci
-  - DOMAIN-SUFFIX,icloud.com.cn
   - DOMAIN-SUFFIX,iqiyis.com
   - DOMAIN-SUFFIX,istoreos.com
   - DOMAIN-SUFFIX,kelee.one
@@ -31,7 +28,6 @@ payload:
   - DOMAIN-SUFFIX,speedtest.cn
   - DOMAIN-SUFFIX,steamcontent.com
   - DOMAIN-SUFFIX,synology.com
-  - DOMAIN-SUFFIX,cloudstudio.work
   - DOMAIN-SUFFIX,cloudstudio.work
   - DOMAIN-SUFFIX,ngrok-free.app
   - DOMAIN-SUFFIX,gradio.live
