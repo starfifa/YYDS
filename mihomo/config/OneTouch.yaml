@@ -91,6 +91,8 @@ proxy-groups:
   - {name: 美国自动,   <<: *UrlTest, filter: *FilterUS, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/United_States.png}
 
 rule-providers: 
+  fix-direct:       {type: http, interval: 86400, behavior: classical, format: yaml, url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/fix-direct.yaml}
+  XPTV:             {type: http, interval: 86400, behavior: classical, format: yaml, url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/XPTV.yaml}
   category-ai-!cn:  {type: http, interval: 86400, behavior: domain, format: mrs, url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/category-ai-!cn.mrs}
   geolocation-!cn:  {type: http, interval: 86400, behavior: domain, format: mrs, url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/geolocation-!cn.mrs}
   youtube:          {type: http, interval: 86400, behavior: domain, format: mrs, url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/youtube.mrs}
@@ -116,4 +118,7 @@ rules:
   # IP规则
   - RULE-SET,private_ip,直连,no-resolve
   - RULE-SET,cn_ip,直连,no-resolve
+  # Fix Direct
+  - RULE-SET,fix-direct,直连
+  - RULE-SET,XPTV,直连
   - MATCH,一键连
